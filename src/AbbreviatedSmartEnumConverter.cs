@@ -9,7 +9,7 @@ namespace Soenneker.Json.Converters.AbbreviatedSmartEnum;
 /// A System.Text.Json AbbreviatedSmartEnum converter
 /// </summary>
 /// <typeparam name="TEnum"></typeparam>
-public class SmartEnumAbbreviationConverter<TEnum> : JsonConverter<TEnum> where TEnum : AbbreviatedSmartEnum<TEnum>
+public sealed class SmartEnumAbbreviationConverter<TEnum> : JsonConverter<TEnum> where TEnum : AbbreviatedSmartEnum<TEnum>
 {
     public override TEnum Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
