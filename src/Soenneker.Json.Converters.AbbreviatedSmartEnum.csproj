@@ -43,6 +43,6 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.7" />
-        <PackageReference Include="Soenneker.SmartEnum.Abbreviated" Version="3.0.1189" />
+        <PackageReference Include="Soenneker.SmartEnum.Abbreviated" Version="3.0.1190" />
     </ItemGroup>
 </Project>
