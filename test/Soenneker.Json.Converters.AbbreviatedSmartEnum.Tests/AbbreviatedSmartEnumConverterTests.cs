@@ -1,16 +1,15 @@
-﻿using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Json.Converters.AbbreviatedSmartEnum.Tests;
 
-[Collection("Collection")]
-public class AbbreviatedSmartEnumConverterTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class AbbreviatedSmartEnumConverterTests : HostedUnitTest
 {
-    public AbbreviatedSmartEnumConverterTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public AbbreviatedSmartEnumConverterTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
