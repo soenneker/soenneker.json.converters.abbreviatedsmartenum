@@ -11,6 +11,13 @@ namespace Soenneker.Json.Converters.AbbreviatedSmartEnum;
 /// <typeparam name="TEnum"></typeparam>
 public sealed class SmartEnumAbbreviationConverter<TEnum> : JsonConverter<TEnum> where TEnum : AbbreviatedSmartEnum<TEnum>
 {
+    /// <summary>
+    /// Executes the read operation.
+    /// </summary>
+    /// <param name="reader">The reader.</param>
+    /// <param name="typeToConvert">The type to convert.</param>
+    /// <param name="options">The options.</param>
+    /// <returns>The result of the operation.</returns>
     public override TEnum Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         switch (reader.TokenType)
@@ -23,6 +30,12 @@ public sealed class SmartEnumAbbreviationConverter<TEnum> : JsonConverter<TEnum>
         }
     }
 
+    /// <summary>
+    /// Executes the write operation.
+    /// </summary>
+    /// <param name="writer">The writer.</param>
+    /// <param name="value">The value.</param>
+    /// <param name="options">The options.</param>
     public override void Write(Utf8JsonWriter writer, TEnum? value, JsonSerializerOptions options)
     {
         if (value == null)
