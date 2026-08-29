@@ -3,11 +3,22 @@
 [![](https://img.shields.io/nuget/dt/soenneker.json.converters.abbreviatedsmartenum.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.json.converters.abbreviatedsmartenum/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.json.converters.abbreviatedsmartenum/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.json.converters.abbreviatedsmartenum/actions/workflows/codeql.yml)
 
-# ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Json.Converters.AbbreviatedSmartEnum
-### A System.Text.Json AbbreviatedSmartEnum converter
+# Soenneker.Json.Converters.AbbreviatedSmartEnum
 
-## Installation
+A System.Text.Json AbbreviatedSmartEnum converter.
 
-```
+## Install
+
+```bash
 dotnet add package Soenneker.Json.Converters.AbbreviatedSmartEnum
 ```
+
+## What you get
+
+- `SmartEnumAbbreviationConverter<TEnum>` — A System.Text.Json AbbreviatedSmartEnum converter.
+
+## API at a glance
+
+| API | What it does | Result / important behavior |
+| --- | --- | --- |
+| `SmartEnumAbbreviationConverter<TEnum>.Read(reader, typeToConvert, options)` | Executes the read operation. | The result of the operation. |
