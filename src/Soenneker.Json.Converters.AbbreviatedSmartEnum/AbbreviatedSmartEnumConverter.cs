@@ -6,18 +6,18 @@ using Soenneker.SmartEnum.Abbreviated;
 namespace Soenneker.Json.Converters.AbbreviatedSmartEnum;
 
 /// <summary>
-/// A System.Text.Json AbbreviatedSmartEnum converter
+/// Serializes an abbreviated smart enum as its abbreviation string.
 /// </summary>
-/// <typeparam name="TEnum"></typeparam>
+/// <typeparam name="TEnum">The abbreviated smart-enum type.</typeparam>
 public sealed class SmartEnumAbbreviationConverter<TEnum> : JsonConverter<TEnum> where TEnum : AbbreviatedSmartEnum<TEnum>
 {
     /// <summary>
-    /// Executes the read operation.
+    /// Reads an abbreviation string and resolves the corresponding smart-enum instance.
     /// </summary>
     /// <param name="reader">The reader.</param>
     /// <param name="typeToConvert">The type to convert.</param>
     /// <param name="options">The options.</param>
-    /// <returns>The result of the operation.</returns>
+    /// <returns>The smart-enum instance matching the abbreviation.</returns>
     public override TEnum Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         switch (reader.TokenType)
@@ -31,7 +31,7 @@ public sealed class SmartEnumAbbreviationConverter<TEnum> : JsonConverter<TEnum>
     }
 
     /// <summary>
-    /// Executes the write operation.
+    /// Writes the smart enum's abbreviation as a JSON string.
     /// </summary>
     /// <param name="writer">The writer.</param>
     /// <param name="value">The value.</param>
