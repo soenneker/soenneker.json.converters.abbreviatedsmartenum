@@ -19,7 +19,7 @@ public class AbbreviatedSmartEnumConverterTests : HostedUnitTest
     }
 
     [Test]
-    public async Task Serializes_and_resolves_abbreviation()
+    public async ValueTask Serializes_and_resolves_abbreviation()
     {
         var options = new JsonSerializerOptions();
         options.Converters.Add(new SmartEnumAbbreviationConverter<Status>());
