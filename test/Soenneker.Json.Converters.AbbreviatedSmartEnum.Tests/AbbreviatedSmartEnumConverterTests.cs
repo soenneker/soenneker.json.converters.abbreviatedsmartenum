@@ -2,6 +2,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Soenneker.SmartEnum.Abbreviated;
 using Soenneker.Tests.HostedUnit;
+using System.Threading;
 
 namespace Soenneker.Json.Converters.AbbreviatedSmartEnum.Tests;
 
@@ -19,7 +20,7 @@ public class AbbreviatedSmartEnumConverterTests : HostedUnitTest
     }
 
     [Test]
-    public async ValueTask Serializes_and_resolves_abbreviation()
+    public async ValueTask Serializes_and_resolves_abbreviation(CancellationToken cancellationToken)
     {
         var options = new JsonSerializerOptions();
         options.Converters.Add(new SmartEnumAbbreviationConverter<Status>());
